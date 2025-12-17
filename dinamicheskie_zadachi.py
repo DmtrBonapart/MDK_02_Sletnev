@@ -61,29 +61,25 @@ for i in range(len(Coins)):
         elif i == 0:
             #слева
             znachenie = Coins[i][j] + Coins[i][j - 1][0]
-            marshrut = Coins[i][j - 1][1] + [(i, j)]
+            marshrut = Coins[i][j - 1][1] + ["Вправо"]
             Coins[i][j] = [znachenie, marshrut]
-            print(f"({i},{j}): пришли слева")
         elif j == 0:
             #сверху
             znachenie = Coins[i][j] + Coins[i - 1][j][0]
-            marshrut = Coins[i - 1][j][1] + [(i, j)]
+            marshrut = Coins[i - 1][j][1] + ["Вниз"]
             Coins[i][j] = [znachenie, marshrut]
-            print(f"({i},{j}): пришли сверху")
         else:
             #проверка на оптимальность при i, j != 0
             if Coins[i-1][j][0] >= Coins[i][j-1][0]:
                 #сверху
                 znachenie = Coins[i][j] + Coins[i - 1][j][0]
-                marshrut = Coins[i - 1][j][1] + [(i, j)]
+                marshrut = Coins[i - 1][j][1] + ["Вниз"]
                 Coins[i][j] = [znachenie, marshrut]
-                print(f"({i},{j}): пришли сверху")
             else:
                 #слева
                 znachenie = Coins[i][j] + Coins[i][j - 1][0]
-                marshrut = Coins[i][j - 1][1] + [(i, j)]
+                marshrut = Coins[i][j - 1][1] + ["Вправо"]
                 Coins[i][j] = [znachenie, marshrut]
-                print(f"({i},{j}): пришли слева")
 
 itog = Coins[-1][-1]
 print(f"\nМакс кол-во монет: {itog[0]}")
