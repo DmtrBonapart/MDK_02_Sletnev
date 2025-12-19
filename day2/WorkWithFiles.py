@@ -66,19 +66,22 @@ def zadacha3(imyafaila):
     nechet = 0
     nechet_summa = 0
     max_summa = 0
+
     for i in range(len(moi_file)):
         if moi_file[i] % 2 == 1:
             nechet += 1
             nechet_summa += moi_file[i]
 
-    sred = nechet_summa / nechet
+    srednee = nechet_summa / nechet
+
     for i in range(len(moi_file) - 1):
-        a = moi_file[i]
-        b = moi_file[i + 1]
-        if (a % 5 == 0 or b % 5 == 0) and (a < sred or b < sred):
+        x = moi_file[i]
+        y = moi_file[i + 1]
+
+        if (x % 5 == 0 or y % 5 == 0) and (x < srednee or y < srednee):
             schetchik += 1
-            if max_summa < (a + b):
-                max_summa = (a + b)
-    print(schetchik, max_summa)
+            if max_summa < (x + y):
+                max_summa = (x + y)
+    print(f"Ответ: кол-во пар = {schetchik}, а MAX сумма элементов = {max_summa}")
 
 zadacha3("40992.txt")
