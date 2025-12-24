@@ -20,7 +20,7 @@ print(f"Z-1: MAX длинна X: {itog_dlinna}")
 #Zadacha 2
 with open('36037.txt', 'r') as moi_file:
     stroka = moi_file.read()
-    stroka = "XZZYYXYXZZY"
+    # stroka = "XZZYYXYXZZY"
 
 itog_dlinna = 0
 tekuschaya_dlinna = 0
